@@ -1,357 +1,390 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pink Notes</title>
-    <style>
-        :root {
-            --primary-color: #ff6b9d;
-            --secondary-color: #ffd6e5;
-            --accent-color: #ff3d7f;
-            --light-color: #fff9fb;
-            --text-color: #333;
-            --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pink Notes</title>
+  <style>
+    :root {
+      --primary-color: #ff6b9d;
+      --secondary-color: #ffd6e5;
+      --accent-color: #ff3d7f;
+      --light-color: #fff9fb;
+      --text-color: #333;
+      --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-        body {
-            background-color: var(--light-color);
-            color: var(--text-color);
-            min-height: 100vh;
-            padding: 20px;
-        }
+    body {
+      background-color: var(--light-color);
+      color: var(--text-color);
+      min-height: 100vh;
+      padding: 20px;
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-        header {
-            text-align: center;
-            margin-bottom: 30px;
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-        }
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
 
-        h1 {
-            color: var(--accent-color);
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
+    h1 {
+      color: var(--accent-color);
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
 
-        .subtitle {
-            color: var(--primary-color);
-            font-weight: 300;
-        }
+    .subtitle {
+      color: var(--primary-color);
+      font-weight: 300;
+    }
 
-        .note-form {
-            background-color: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            margin-bottom: 30px;
-        }
+    .note-form {
+      background-color: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      margin-bottom: 30px;
+    }
 
-        .form-group {
-            margin-bottom: 15px;
-        }
+    .form-group {
+      margin-bottom: 15px;
+    }
 
-        label {
-            display: block;
-            margin-bottom: 5px;
-            color: var(--primary-color);
-            font-weight: 500;
-        }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--primary-color);
+      font-weight: 500;
+    }
 
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid var(--secondary-color);
-            border-radius: 5px;
-            font-size: 1rem;
-            transition: border 0.3s;
-        }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid var(--secondary-color);
+      border-radius: 5px;
+      font-size: 1rem;
+      transition: border 0.3s;
+    }
 
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-        }
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--primary-color);
+    }
 
-        textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
 
-        .btn {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background-color 0.3s;
-        }
+    .btn {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+    }
 
-        .btn:hover {
-            background-color: var(--accent-color);
-        }
+    .btn:hover {
+      background-color: var(--accent-color);
+    }
 
-        .notes-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-        }
+    .notes-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
 
-        .note-card {
-            background-color: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: var(--shadow);
-            position: relative;
-            transition: transform 0.3s;
-            border-top: 5px solid var(--secondary-color);
-        }
+    .note-card {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+      position: relative;
+      transition: transform 0.3s;
+      border-top: 5px solid var(--secondary-color);
+    }
 
-        .note-card:hover {
-            transform: translateY(-5px);
-        }
+    .note-card:hover {
+      transform: translateY(-5px);
+    }
 
-        .note-title {
-            color: var(--accent-color);
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
+    .note-title {
+      color: var(--accent-color);
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
 
-        .note-content {
-            color: var(--text-color);
-            margin-bottom: 15px;
-            line-height: 1.5;
-        }
+    .note-content {
+      color: var(--text-color);
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
 
-        .note-date {
-            color: #999;
-            font-size: 0.8rem;
-            margin-bottom: 15px;
-            display: block;
-        }
+    .note-date {
+      color: #999;
+      font-size: 0.8rem;
+      margin-bottom: 15px;
+      display: block;
+    }
 
-        .note-actions {
-            display: flex;
-            justify-content: flex-end;
-            gap: 10px;
-        }
+    .note-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
 
-        .delete-btn {
-            background-color: #ffebee;
-            color: #f44336;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 3px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+    .delete-btn {
+      background-color: #ffebee;
+      color: #f44336;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
 
-        .delete-btn:hover {
-            background-color: #ffcdd2;
-        }
+    .delete-btn:hover {
+      background-color: #ffcdd2;
+    }
 
-        .edit-btn {
-            background-color: #e8f5e9;
-            color: #4caf50;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 3px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+    .edit-btn {
+      background-color: #e8f5e9;
+      color: #4caf50;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
 
-        .edit-btn:hover {
-            background-color: #c8e6c9;
-        }
+    .edit-btn:hover {
+      background-color: #c8e6c9;
+    }
 
-        .empty-notes {
-            text-align: center;
-            padding: 40px;
-            color: var(--primary-color);
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-        }
+    .done-btn {
+      background-color: #fff3cd;
+      color: #856404;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
 
-        @media (max-width: 768px) {
-            .notes-container {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    .done-btn:hover {
+      background-color: #ffeeba;
+    }
+
+    .done .note-title,
+    .done .note-content {
+      text-decoration: line-through;
+      color: gray;
+    }
+
+    .empty-notes {
+      text-align: center;
+      padding: 40px;
+      color: var(--primary-color);
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+
+    @media (max-width: 768px) {
+      .notes-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>sapirin's Notes</h1>
-            <p class="subtitle">Your beautiful note-taking app</p>
-        </header>
+  <div class="container">
+    <header>
+      <h1>Sabirin's Notes</h1>
+      <p class="subtitle">Your beautiful note-taking app</p>
+    </header>
 
-        <div class="note-form">
-            <h2>Add New Note</h2>
-            <form id="noteForm">
-                <div class="form-group">
-                    <label for="noteTitle">Title</label>
-                    <input type="text" id="noteTitle" required>
-                </div>
-                <div class="form-group">
-                    <label for="noteContent">Content</label>
-                    <textarea id="noteContent" required></textarea>
-                </div>
-                <button type="submit" class="btn">Save Note</button>
-            </form>
+    <div class="note-form">
+      <h2>Add New Note</h2>
+      <form id="noteForm">
+        <div class="form-group">
+          <label for="noteTitle">Title</label>
+          <input type="text" id="noteTitle" required>
         </div>
-
-        <div id="notesList">
-            <div class="empty-notes" id="emptyNotes">
-                <h3>No notes yet</h3>
-                <p>Add your first note to get started!</p>
-            </div>
-            <div class="notes-container" id="notesContainer"></div>
+        <div class="form-group">
+          <label for="noteContent">Content</label>
+          <textarea id="noteContent" required></textarea>
         </div>
+        <button type="submit" class="btn">Save Note</button>
+      </form>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const noteForm = document.getElementById('noteForm');
-            const noteTitle = document.getElementById('noteTitle');
-            const noteContent = document.getElementById('noteContent');
-            const notesContainer = document.getElementById('notesContainer');
-            const emptyNotes = document.getElementById('emptyNotes');
+    <div id="notesList">
+      <div class="empty-notes" id="emptyNotes">
+        <h3>No notes yet</h3>
+        <p>Add your first note to get started!</p>
+      </div>
+      <div class="notes-container" id="notesContainer"></div>
+    </div>
+  </div>
 
-            let notes = JSON.parse(localStorage.getItem('notes')) || [];
-            let editingNoteId = null;
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const noteForm = document.getElementById('noteForm');
+      const noteTitle = document.getElementById('noteTitle');
+      const noteContent = document.getElementById('noteContent');
+      const notesContainer = document.getElementById('notesContainer');
+      const emptyNotes = document.getElementById('emptyNotes');
 
-            // Display notes on page load
-            displayNotes();
+      let notes = JSON.parse(localStorage.getItem('notes')) || [];
+      let editingNoteId = null;
 
-            // Form submission
-            noteForm.addEventListener('submit', function(e) {
-                e.preventDefault();
+      displayNotes();
 
-                const title = noteTitle.value.trim();
-                const content = noteContent.value.trim();
+      noteForm.addEventListener('submit', function (e) {
+        e.preventDefault();
 
-                if (title && content) {
-                    if (editingNoteId !== null) {
-                        // Update existing note
-                        notes = notes.map(note => 
-                            note.id === editingNoteId 
-                                ? {...note, title, content, date: new Date().toISOString()}
-                                : note
-                        );
-                        editingNoteId = null;
-                    } else {
-                        // Add new note
-                        const newNote = {
-                            id: Date.now(),
-                            title,
-                            content,
-                            date: new Date().toISOString()
-                        };
-                        notes.push(newNote);
-                    }
+        const title = noteTitle.value.trim();
+        const content = noteContent.value.trim();
 
-                    saveNotes();
-                    displayNotes();
-                    noteForm.reset();
-                }
-            });
+        if (title && content) {
+          if (editingNoteId !== null) {
+            notes = notes.map(note =>
+              note.id === editingNoteId
+                ? { ...note, title, content, date: new Date().toISOString() }
+                : note
+            );
+            editingNoteId = null;
+          } else {
+            const newNote = {
+              id: Date.now(),
+              title,
+              content,
+              date: new Date().toISOString(),
+              done: false
+            };
+            notes.push(newNote);
+          }
 
-            function displayNotes() {
-                if (notes.length === 0) {
-                    emptyNotes.style.display = 'block';
-                    notesContainer.style.display = 'none';
-                    return;
-                }
+          saveNotes();
+          displayNotes();
+          noteForm.reset();
+        }
+      });
 
-                emptyNotes.style.display = 'none';
-                notesContainer.style.display = 'grid';
-                notesContainer.innerHTML = '';
+      function displayNotes() {
+        if (notes.length === 0) {
+          emptyNotes.style.display = 'block';
+          notesContainer.style.display = 'none';
+          return;
+        }
 
-                // Sort notes by date (newest first)
-                const sortedNotes = [...notes].sort((a, b) => new Date(b.date) - new Date(a.date));
+        emptyNotes.style.display = 'none';
+        notesContainer.style.display = 'grid';
+        notesContainer.innerHTML = '';
 
-                sortedNotes.forEach(note => {
-                    const noteElement = document.createElement('div');
-                    noteElement.className = 'note-card';
-                    noteElement.innerHTML = `
-                        <h3 class="note-title">${note.title}</h3>
-                        <span class="note-date">${formatDate(note.date)}</span>
-                        <p class="note-content">${note.content}</p>
-                        <div class="note-actions">
-                            <button class="edit-btn" data-id="${note.id}">Edit</button>
-                            <button class="delete-btn" data-id="${note.id}">Delete</button>
-                        </div>
-                    `;
-                    notesContainer.appendChild(noteElement);
-                });
+        const sortedNotes = [...notes].sort((a, b) => new Date(b.date) - new Date(a.date));
 
-                // Add event listeners to delete buttons
-                document.querySelectorAll('.delete-btn').forEach(btn => {
-                    btn.addEventListener('click', function() {
-                        const id = parseInt(this.getAttribute('data-id'));
-                        deleteNote(id);
-                    });
-                });
+        sortedNotes.forEach(note => {
+          const noteElement = document.createElement('div');
+          noteElement.className = 'note-card';
+          if (note.done) noteElement.classList.add('done');
 
-                // Add event listeners to edit buttons
-                document.querySelectorAll('.edit-btn').forEach(btn => {
-                    btn.addEventListener('click', function() {
-                        const id = parseInt(this.getAttribute('data-id'));
-                        editNote(id);
-                    });
-                });
-            }
-
-            function deleteNote(id) {
-                if (confirm('Are you sure you want to delete this note?')) {
-                    notes = notes.filter(note => note.id !== id);
-                    saveNotes();
-                    displayNotes();
-                }
-            }
-
-            function editNote(id) {
-                const noteToEdit = notes.find(note => note.id === id);
-                if (noteToEdit) {
-                    noteTitle.value = noteToEdit.title;
-                    noteContent.value = noteToEdit.content;
-                    editingNoteId = id;
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }
-            }
-
-            function saveNotes() {
-                localStorage.setItem('notes', JSON.stringify(notes));
-            }
-
-            function formatDate(dateString) {
-                const options = { 
-                    year: 'numeric', 
-                    month: 'short', 
-                    day: 'numeric',
-                    hour: '2-digit',
-                    minute: '2-digit'
-                };
-                return new Date(dateString).toLocaleDateString('en-US', options);
-            }
+          noteElement.innerHTML = `
+            <h3 class="note-title">${note.title}</h3>
+            <span class="note-date">${formatDate(note.date)}</span>
+            <p class="note-content">${note.content}</p>
+            <div class="note-actions">
+              <button class="done-btn" data-id="${note.id}">${note.done ? "Undo" : "Done"}</button>
+              <button class="edit-btn" data-id="${note.id}">Edit</button>
+              <button class="delete-btn" data-id="${note.id}">Delete</button>
+            </div>
+          `;
+          notesContainer.appendChild(noteElement);
         });
-    </script>
+
+        document.querySelectorAll('.delete-btn').forEach(btn => {
+          btn.addEventListener('click', function () {
+            const id = parseInt(this.getAttribute('data-id'));
+            deleteNote(id);
+          });
+        });
+
+        document.querySelectorAll('.edit-btn').forEach(btn => {
+          btn.addEventListener('click', function () {
+            const id = parseInt(this.getAttribute('data-id'));
+            editNote(id);
+          });
+        });
+
+        document.querySelectorAll('.done-btn').forEach(btn => {
+          btn.addEventListener('click', function () {
+            const id = parseInt(this.getAttribute('data-id'));
+            toggleDone(id);
+          });
+        });
+      }
+
+      function deleteNote(id) {
+        if (confirm('Are you sure you want to delete this note?')) {
+          notes = notes.filter(note => note.id !== id);
+          saveNotes();
+          displayNotes();
+        }
+      }
+
+      function editNote(id) {
+        const noteToEdit = notes.find(note => note.id === id);
+        if (noteToEdit) {
+          noteTitle.value = noteToEdit.title;
+          noteContent.value = noteToEdit.content;
+          editingNoteId = id;
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }
+
+      function toggleDone(id) {
+        notes = notes.map(note =>
+          note.id === id ? { ...note, done: !note.done } : note
+        );
+        saveNotes();
+        displayNotes();
+      }
+
+      function saveNotes() {
+        localStorage.setItem('notes', JSON.stringify(notes));
+      }
+
+      function formatDate(dateString) {
+        const options = {
+          year: 'numeric',
+          month: 'short',
+          day: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit'
+        };
+        return new Date(dateString).toLocaleDateString('en-US', options);
+      }
+    });
+  </script>
 </body>
 </html>
